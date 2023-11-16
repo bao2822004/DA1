@@ -21,11 +21,37 @@ import javax.swing.JFrame;
  */
 public class Menu extends javax.swing.JPanel {
 
+    
+    private EventMenuSelected event;
+
+    public void addEventMenuSelected(EventMenuSelected event) {
+        this.event = event;
+        listMenu1.addEventMenuSelected(event);
+    }
     /**
      * Creates new form Menu
      */
     public Menu() {
         initComponents();
+        setOpaque(false);
+        ListMenu1.setOpaque(false);
+        init();
+    }
+    
+    private void init() {
+        ListMenu1.addItem(new Model_Menu("5", "TRANG CHỦ", Model_Menu.MenuType.MENU));
+        ListMenu1.addItem(new Model_Menu("1", "ĐỔI MẬT KHẨU", Model_Menu.MenuType.MENU));
+        ListMenu1.addItem(new Model_Menu("2", "ĐĂNG XUẤT", Model_Menu.MenuType.MENU));
+        ListMenu1.addItem(new Model_Menu("8", "KHÁCH HÀNG", Model_Menu.MenuType.MENU));
+        ListMenu1.addItem(new Model_Menu("4", "PHÒNG HÁT", Model_Menu.MenuType.MENU));
+        ListMenu1.addItem(new Model_Menu("5", "NHÂN VIÊN", Model_Menu.MenuType.MENU));
+
+        ListMenu1.addItem(new Model_Menu("6", "DỊCH VỤ", Model_Menu.MenuType.MENU));
+        ListMenu1.addItem(new Model_Menu("7", "THANH TOÁN", Model_Menu.MenuType.MENU));
+        ListMenu1.addItem(new Model_Menu("8", "TRỢ GIÚP", Model_Menu.MenuType.MENU));
+        ListMenu1.addItem(new Model_Menu("9", "KẾT THÚC", Model_Menu.MenuType.MENU));
+
+        ListMenu1.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));
     }
 
     /**
@@ -37,42 +63,42 @@ public class Menu extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
+        Panel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        ListMenu1 = new javax.swing.JPanel();
 
         jLabel1.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("KARAOKE DoDo");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout PanelLayout = new javax.swing.GroupLayout(Panel);
+        Panel.setLayout(PanelLayout);
+        PanelLayout.setHorizontalGroup(
+            PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        PanelLayout.setVerticalGroup(
+            PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(jLabel1)
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        ListMenu1.setBackground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout ListMenu1Layout = new javax.swing.GroupLayout(ListMenu1);
+        ListMenu1.setLayout(ListMenu1Layout);
+        ListMenu1Layout.setHorizontalGroup(
+            ListMenu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        ListMenu1Layout.setVerticalGroup(
+            ListMenu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 441, Short.MAX_VALUE)
         );
 
@@ -80,22 +106,52 @@ public class Menu extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(ListMenu1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(ListMenu1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    @Override
+    protected void paintChildren(Graphics grphcs) {
+        Graphics2D g2 = (Graphics2D) grphcs;
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        GradientPaint g = new GradientPaint(0, 0, Color.decode("#E01C53"), 0, getHeight(), Color.decode("#000046"));
+        g2.setPaint(g);
+        g2.fillRoundRect(0, 0, getWidth(), getHeight(), 15, 15);
+        g2.fillRect(getWidth() - 20, 0, getWidth(), getHeight());
+        super.paintChildren(grphcs);
+    }
+
+    private int x;
+    private int y;
+
+    public void initMoving(JFrame fram) {
+        Panel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent me) {
+                x = me.getX();
+                y = me.getY();
+            }
+
+        });
+        Panel.addMouseMotionListener(new MouseMotionAdapter() {
+            @Override
+            public void mouseDragged(MouseEvent me) {
+                fram.setLocation(me.getXOnScreen() - x, me.getYOnScreen() - y);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel ListMenu1;
+    private javax.swing.JPanel Panel;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
