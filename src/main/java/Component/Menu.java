@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package Component;
-//import com.raven.event.EventMenuSelected;
+import Event.EventMenuSelected;
 //import com.raven.model.Model_Menu;
 import java.awt.Color;
 import java.awt.GradientPaint;
